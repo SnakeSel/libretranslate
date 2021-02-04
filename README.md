@@ -1,5 +1,5 @@
 # LibreTranslate in golang
-[LibreTranslate](https://libretranslate.com) is an Open Source Machine Translation
+[LibreTranslate](https://libretranslate.com) is an Open Source Machine Translation  
 [API Docs](https://libretranslate.com/docs) | [Self-Hosted](https://github.com/uav4geo/LibreTranslate)
 
 ### Install:
