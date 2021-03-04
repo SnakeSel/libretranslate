@@ -28,6 +28,15 @@ func main() {
     } else {
         fmt.Println(err.Error())
     }
+
+    // Detect the language of the text
+    const textDe:="Nächster Stil"
+    conf,lang, err := tr.Detect(textDe)
+    if err == nil {
+        fmt.Printf("%s (%f)", lang, conf)
+    } else {
+        fmt.Println(err.Error())
+    }
 }
 ```
 
