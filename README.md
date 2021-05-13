@@ -4,7 +4,7 @@
 
 ### Install:
 ```
-go get github.com/SnakeSel/libretranslate
+go get github.com/snakesel/libretranslate
 ```
 
 ### Example usage:
@@ -18,11 +18,14 @@ import (
 )
 
 func main() {
-    const text string = `Hello, World!`
+    translate := tr.New(tr.Config{
+        Url:   "https://libretranslate.com",
+        Key:   "XXX",
+    })
 
     // you can use "auto" for source language
     // so, translator will detect language
-    trtext, err := tr.Translate(text, "auto", "ru")
+    trtext, err := translate.Translate("Hello, World!", "auto", "ru")
     if err == nil {
         fmt.Println(trtext)
     } else {
@@ -30,8 +33,7 @@ func main() {
     }
 
     // Detect the language of the text
-    const textDe:="Nächster Stil"
-    conf,lang, err := tr.Detect(textDe)
+    conf, lang, err = translate.Detect("Nächster Stil")
     if err == nil {
         fmt.Printf("%s (%f)", lang, conf)
     } else {
