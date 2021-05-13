@@ -4,7 +4,7 @@
 
 ### Install:
 ```
-go get github.com/snakesel/libretranslate
+go get -u github.com/snakesel/libretranslate
 ```
 
 ### Example usage:
@@ -33,9 +33,9 @@ func main() {
     }
 
     // Detect the language of the text
-    conf, lang, err = translate.Detect("Nächster Stil")
+    conf, lang, err := translate.Detect("Nächster Stil")
     if err == nil {
-        fmt.Printf("%s (%f)", lang, conf)
+        fmt.Printf("%s (%f)\n", lang, conf)
     } else {
         fmt.Println(err.Error())
     }

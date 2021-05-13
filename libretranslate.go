@@ -87,7 +87,8 @@ func (tr *Translation) Translate(source, sourceLang, targetLang string) (string,
 	}
 
 	if val, ok := m["error"]; ok {
-		return "", errors.New(fmt.Sprintf("%v", val))
+		return "", fmt.Errorf("%v", val)
+
 	}
 
 	return "", errors.New("unknown answer")
@@ -145,7 +146,7 @@ func (tr *Translation) Detect(text string) (float32, string, error) {
 		}
 		m := result2.(map[string]interface{})
 		if val, ok := m["error"]; ok {
-			return -1, "", errors.New(fmt.Sprintf("%v", val))
+			return -1, "", fmt.Errorf("%v", val)
 		}
 	}
 
